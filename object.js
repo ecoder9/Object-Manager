@@ -41,15 +41,12 @@ function _obj()
 	// RESET AN ARRAY OF PROPERTIES
 	this.destroy = function(arr)
 	{
-		console.log(arr.constructor === Array);
 		if(arr.constructor === Array)
 		{
 			for(i=0;i<arr.length;i++)
 			{
-				console.log(_self.exist(arr[i]));
 				if(_self.exist(arr[i]))
 				{
-					console.log(arr[i]);
 					_self.remove(arr[i]);
 				}	
 				else
@@ -100,40 +97,3 @@ function _obj()
 	}
 
 }
-
-// USAGE EXAMPLE
-
-/*
-
-// _obj() REPLACES {} FOR CREATING EMPTY OBJECT
-var Person = new _obj();
-
-// INITIALIZE KEYS WITH NULL VALUE (ARRAY REQUIRED)
-Person.init(["gender","height","weight","eyeColor"]);
-
-// INITIALIZE KEYS WITH VALUES (OBJECT REQUIRED)
-Person.init({gender:"male",height:68,weight:150,eyeColor:"brown"});
-
-// CHECK IF KEY EXISTS IN OBJECT
-Person.exist("gender"); 	// RETURNS TRUE
-Person.exist("hairColor"); 	// RETURNS FALSE
-
-// RETURNS THE NON FUNCTION KEYS
-Person.keys();
-
-// RETURNS THE NON FUNCTION KEYS AND VALUES
-Person.data();
-
-// RETURN SIZE OF OBJECT
-Person.size();
-
-// REMOVE PROPERTY FROM OBJECT
-Person.remove("eyeColor");
-
-// REMOVE LIST OF PROPERTIES FROM OBJECT
-Person.destroy(["height","weight"]);
-
-// RETREIVE NORMAL OBJECT PROPERTY VALUE
-Person.gender;
-
-*/
